@@ -11,7 +11,7 @@ let screenWidth = window.screen.width;
 let start;
 let end;
 let intervalId;
-// slider function
+
 function updateSlider() {
     imageSlides.forEach(slide => slide.style.transform = `translateX(-${slideIndex * (slideWidth < screenWidth ? slideWidth : screenWidth)}px)`);
 
@@ -19,7 +19,6 @@ function updateSlider() {
     dots[slideIndex].classList.add('active');
 }
 
-// moving slides with the arrow buttons
 function previousSlide() {
     slideIndex <= 0 ? slideIndex = imageSlides.length - 1 : slideIndex--;
 
@@ -36,7 +35,7 @@ arrowLeft.addEventListener('click', previousSlide);
 arrowRight.addEventListener('click', nextSlide);
 
 function startInterval() {
-    intervalId = setInterval(nextSlide, 1000);
+    intervalId = setInterval(nextSlide, 3000);
 }
 
 function stopInterval() {
@@ -53,7 +52,6 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-// moving slides with dots indicators
 function goToSlide(index) {
     slideIndex = index;
     updateSlider();
@@ -62,7 +60,7 @@ function goToSlide(index) {
 dots.forEach((dot, index) => dot.addEventListener('click', () => goToSlide(index)));
 
 
-// handling screen resize
+
 function adjustScreen() {
     screenWidth = window.screen.width;
     updateSlider();
@@ -70,7 +68,7 @@ function adjustScreen() {
 
 window.addEventListener('resize', adjustScreen);
 
-// moving slides with finger swipe
+
 slidesContainer.addEventListener('touchstart', (e) => {
     start = e.touches[0].clientX;
 });
