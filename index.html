@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="slides-container">
+                <img src="./images/1.jpg" alt="waterfall1">
+                <img src="./images/2.jpg" alt="waterfall2">
+                <img src="./images/3.jpg" alt="waterfall3">
+                <button class="prev" onclick="prevImg()">&#10094;</button>
+                <button class="next" onclick="nextImg()">&#10095;</button>
+            </div>
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="arrow-left">←</div>
+            <div class="arrow-right">→</div>
+        </div>
+    </main>
+
+</body>
+
+</html>
